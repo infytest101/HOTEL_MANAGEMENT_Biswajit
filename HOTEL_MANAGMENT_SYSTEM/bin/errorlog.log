@@ -1,0 +1,130 @@
+2023-06-08T17:39:02.513+05:30  INFO 11148 --- [main] c.i.app.HotelManagmentSystemApplication  : Starting HotelManagmentSystemApplication using Java 17.0.4.1 with PID 11148 (C:\Users\biswajit.nayak01\Desktop\report\INFOSYS APP\HOTEL_MANAGMENT_SYSTEM\target\classes started by biswajit.nayak01 in C:\Users\biswajit.nayak01\Desktop\report\INFOSYS APP\HOTEL_MANAGMENT_SYSTEM)
+2023-06-08T17:39:02.531+05:30  INFO 11148 --- [main] c.i.app.HotelManagmentSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-06-08T17:39:03.207+05:30  INFO 11148 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-08T17:39:03.284+05:30  INFO 11148 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 67 ms. Found 3 JPA repository interfaces.
+2023-06-08T17:39:03.755+05:30  INFO 11148 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8084 (http)
+2023-06-08T17:39:03.770+05:30  INFO 11148 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-08T17:39:03.771+05:30  INFO 11148 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-06-08T17:39:04.030+05:30  INFO 11148 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-06-08T17:39:04.035+05:30  INFO 11148 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/infy]   : Initializing Spring embedded WebApplicationContext
+2023-06-08T17:39:04.036+05:30  INFO 11148 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1454 ms
+2023-06-08T17:39:04.190+05:30  INFO 11148 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-08T17:39:04.248+05:30  INFO 11148 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.2.Final
+2023-06-08T17:39:04.251+05:30  INFO 11148 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-06-08T17:39:04.409+05:30  INFO 11148 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-06-08T17:39:04.523+05:30  INFO 11148 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-06-08T17:39:04.542+05:30  INFO 11148 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-08T17:39:04.867+05:30  INFO 11148 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@87aec6a
+2023-06-08T17:39:04.869+05:30  INFO 11148 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-08T17:39:04.955+05:30  INFO 11148 --- [main] org.hibernate.orm.dialect                : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.0.29
+2023-06-08T17:39:05.190+05:30  INFO 11148 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-06-08T17:39:05.769+05:30  INFO 11148 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-08T17:39:05.870+05:30  INFO 11148 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-08T17:39:06.202+05:30  WARN 11148 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-08T17:39:06.585+05:30  INFO 11148 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8084 (http) with context path '/infy'
+2023-06-08T17:39:06.594+05:30  INFO 11148 --- [main] c.i.app.HotelManagmentSystemApplication  : Started HotelManagmentSystemApplication in 4.633 seconds (process running for 5.445)
+2023-06-08T17:39:06.599+05:30  INFO 11148 --- [main] c.i.app.HotelManagmentSystemApplication  : <<<<<<<<<<<<<<<<<<<appication Started>>>>>>>>>>>>>>>
+2023-06-08T17:40:24.039+05:30  INFO 11148 --- [http-nio-8084-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/infy]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-08T17:40:24.047+05:30  INFO 11148 --- [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-08T17:40:24.047+05:30  INFO 11148 --- [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-06-08T17:40:24.422+05:30  INFO 11148 --- [http-nio-8084-exec-1] c.i.app.serviceImpl.RoomsServiceImpl     :  RoomsServiceImpl :fetchAllRoomData:  Rooms Table PRICE  ID  RoomType Data::[RoomPriceTypeDto [price=4567, id=902, roomtype=null, roomtypedata=Luxury, isACAvailable=NONAC, isSmokingAvailable=Smok, amenties={"isSmokingAvailable":"Smok","isACAvailable":"NONAC","checkboxes":["WIFI","TV","Geyser"]}], RoomPriceTypeDto [price=1018, id=903, roomtype=null, roomtypedata=Deluxe, isACAvailable=NONAC, isSmokingAvailable=NOSmok, amenties={"isSmokingAvailable":"NOSmok","isACAvailable":"NONAC","checkboxes":["TV"]}], RoomPriceTypeDto [price=4567, id=952, roomtype=null, roomtypedata=Superior, isACAvailable=NONAC, isSmokingAvailable=Smok, amenties={"isSmokingAvailable":"Smok","isACAvailable":"NONAC","checkboxes":["WIFI","TV","Geyser"]}], RoomPriceTypeDto [price=4567, id=953, roomtype=null, roomtypedata=Superior, isACAvailable=NONAC, isSmokingAvailable=Smok, amenties={"isSmokingAvailable":"Smok","isACAvailable":"NONAC","checkboxes":["WIFI","TV","Geyser"]}]]
+2023-06-08T17:40:24.422+05:30  INFO 11148 --- [http-nio-8084-exec-1] c.i.app.controller.HomePageController    : fetching roomType Data from Dynamic DB:::[Superior, Deluxe, Luxury, Suite]
+2023-06-08T17:40:26.393+05:30  INFO 11148 --- [http-nio-8084-exec-2] c.i.app.serviceImpl.RoomsServiceImpl     :  RoomsServiceImpl :fetchAllRoomData:  Rooms Table PRICE  ID  RoomType Data::[RoomPriceTypeDto [price=4567, id=902, roomtype=null, roomtypedata=Luxury, isACAvailable=NONAC, isSmokingAvailable=Smok, amenties={"isSmokingAvailable":"Smok","isACAvailable":"NONAC","checkboxes":["WIFI","TV","Geyser"]}], RoomPriceTypeDto [price=1018, id=903, roomtype=null, roomtypedata=Deluxe, isACAvailable=NONAC, isSmokingAvailable=NOSmok, amenties={"isSmokingAvailable":"NOSmok","isACAvailable":"NONAC","checkboxes":["TV"]}], RoomPriceTypeDto [price=4567, id=952, roomtype=null, roomtypedata=Superior, isACAvailable=NONAC, isSmokingAvailable=Smok, amenties={"isSmokingAvailable":"Smok","isACAvailable":"NONAC","checkboxes":["WIFI","TV","Geyser"]}], RoomPriceTypeDto [price=4567, id=953, roomtype=null, roomtypedata=Superior, isACAvailable=NONAC, isSmokingAvailable=Smok, amenties={"isSmokingAvailable":"Smok","isACAvailable":"NONAC","checkboxes":["WIFI","TV","Geyser"]}]]
+2023-06-08T17:40:26.394+05:30  INFO 11148 --- [http-nio-8084-exec-2] c.infosys.app.controller.RoomController  : fetchAllRoooms ::::::::::::::::::::::::::::::::::[RoomPriceTypeDto [price=4567, id=902, roomtype=null, roomtypedata=Luxury, isACAvailable=NONAC, isSmokingAvailable=Smok, amenties={"isSmokingAvailable":"Smok","isACAvailable":"NONAC","checkboxes":["WIFI","TV","Geyser"]}], RoomPriceTypeDto [price=1018, id=903, roomtype=null, roomtypedata=Deluxe, isACAvailable=NONAC, isSmokingAvailable=NOSmok, amenties={"isSmokingAvailable":"NOSmok","isACAvailable":"NONAC","checkboxes":["TV"]}], RoomPriceTypeDto [price=4567, id=952, roomtype=null, roomtypedata=Superior, isACAvailable=NONAC, isSmokingAvailable=Smok, amenties={"isSmokingAvailable":"Smok","isACAvailable":"NONAC","checkboxes":["WIFI","TV","Geyser"]}], RoomPriceTypeDto [price=4567, id=953, roomtype=null, roomtypedata=Superior, isACAvailable=NONAC, isSmokingAvailable=Smok, amenties={"isSmokingAvailable":"Smok","isACAvailable":"NONAC","checkboxes":["WIFI","TV","Geyser"]}]]
+2023-06-08T17:40:41.565+05:30  INFO 11148 --- [http-nio-8084-exec-10] c.i.app.controller.HomePageController    : HomePageController:: editDeleteRenderUrl() :: EditDeleteRoom :: Rendering page
+2023-06-08T17:40:42.014+05:30  INFO 11148 --- [http-nio-8084-exec-6] c.i.app.serviceImpl.RoomsServiceImpl     :  RoomsServiceImpl :fetchAllRoomData:  Rooms Table PRICE  ID  RoomType Data::[RoomPriceTypeDto [price=4567, id=902, roomtype=null, roomtypedata=Luxury, isACAvailable=NONAC, isSmokingAvailable=Smok, amenties={"isSmokingAvailable":"Smok","isACAvailable":"NONAC","checkboxes":["WIFI","TV","Geyser"]}], RoomPriceTypeDto [price=1018, id=903, roomtype=null, roomtypedata=Deluxe, isACAvailable=NONAC, isSmokingAvailable=NOSmok, amenties={"isSmokingAvailable":"NOSmok","isACAvailable":"NONAC","checkboxes":["TV"]}], RoomPriceTypeDto [price=4567, id=952, roomtype=null, roomtypedata=Superior, isACAvailable=NONAC, isSmokingAvailable=Smok, amenties={"isSmokingAvailable":"Smok","isACAvailable":"NONAC","checkboxes":["WIFI","TV","Geyser"]}], RoomPriceTypeDto [price=4567, id=953, roomtype=null, roomtypedata=Superior, isACAvailable=NONAC, isSmokingAvailable=Smok, amenties={"isSmokingAvailable":"Smok","isACAvailable":"NONAC","checkboxes":["WIFI","TV","Geyser"]}]]
+2023-06-08T17:40:42.014+05:30  INFO 11148 --- [http-nio-8084-exec-6] c.infosys.app.controller.RoomController  : fetchAllRoooms ::::::::::::::::::::::::::::::::::[RoomPriceTypeDto [price=4567, id=902, roomtype=null, roomtypedata=Luxury, isACAvailable=NONAC, isSmokingAvailable=Smok, amenties={"isSmokingAvailable":"Smok","isACAvailable":"NONAC","checkboxes":["WIFI","TV","Geyser"]}], RoomPriceTypeDto [price=1018, id=903, roomtype=null, roomtypedata=Deluxe, isACAvailable=NONAC, isSmokingAvailable=NOSmok, amenties={"isSmokingAvailable":"NOSmok","isACAvailable":"NONAC","checkboxes":["TV"]}], RoomPriceTypeDto [price=4567, id=952, roomtype=null, roomtypedata=Superior, isACAvailable=NONAC, isSmokingAvailable=Smok, amenties={"isSmokingAvailable":"Smok","isACAvailable":"NONAC","checkboxes":["WIFI","TV","Geyser"]}], RoomPriceTypeDto [price=4567, id=953, roomtype=null, roomtypedata=Superior, isACAvailable=NONAC, isSmokingAvailable=Smok, amenties={"isSmokingAvailable":"Smok","isACAvailable":"NONAC","checkboxes":["WIFI","TV","Geyser"]}]]
+2023-06-08T17:40:51.222+05:30  INFO 11148 --- [http-nio-8084-exec-8] c.i.app.controller.HomePageController    : DeleteRoomDetails DeleteRoomDetails:::::::::::902
+2023-06-08T17:41:00.558+05:30 ERROR 11148 --- [http-nio-8084-exec-7] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/infy] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "com.infosys.app.controller.RoomsTypeController.fetchRoomType()" because "this.rc" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "com.infosys.app.controller.RoomsTypeController.fetchRoomType()" because "this.rc" is null
+	at com.infosys.app.controller.RoomController.bookCostumer(RoomController.java:42) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207) ~[spring-web-6.0.9.jar:6.0.9]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152) ~[spring-web-6.0.9.jar:6.0.9]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.0.9.jar:6.0.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884) ~[spring-webmvc-6.0.9.jar:6.0.9]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) ~[spring-webmvc-6.0.9.jar:6.0.9]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.0.9.jar:6.0.9]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081) ~[spring-webmvc-6.0.9.jar:6.0.9]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974) ~[spring-webmvc-6.0.9.jar:6.0.9]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011) ~[spring-webmvc-6.0.9.jar:6.0.9]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.0.9.jar:6.0.9]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.8.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.0.9.jar:6.0.9]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.8.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.8.jar:10.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.0.9.jar:6.0.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.9.jar:6.0.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.0.9.jar:6.0.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.9.jar:6.0.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.0.9.jar:6.0.9]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.9.jar:6.0.9]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.8.jar:10.1.8]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-06-08T17:41:00.982+05:30  INFO 11148 --- [http-nio-8084-exec-1] c.i.app.controller.RoomsTypeController   : fetching roomType Data from DB:::[Superior, Deluxe, Luxury, Suite]
+2023-06-08T17:41:59.568+05:30  INFO 11148 --- [RMI TCP Connection(12)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-06-08T17:41:59.585+05:30  INFO 11148 --- [RMI TCP Connection(12)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-06-08T17:41:59.587+05:30  INFO 11148 --- [RMI TCP Connection(12)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/infy]   : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-06-08T17:41:59.597+05:30  INFO 11148 --- [RMI TCP Connection(12)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-08T17:41:59.600+05:30  INFO 11148 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-08T17:41:59.612+05:30  INFO 11148 --- [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-06-08T18:17:38.458+05:30  INFO 10896 --- [main] c.i.app.HotelManagmentSystemApplication  : Starting HotelManagmentSystemApplication using Java 17.0.4.1 with PID 10896 (C:\Users\biswajit.nayak01\Desktop\report\INFOSYS APP\HOTEL_MANAGMENT_SYSTEM\target\classes started by biswajit.nayak01 in C:\Users\biswajit.nayak01\Desktop\report\INFOSYS APP\HOTEL_MANAGMENT_SYSTEM)
+2023-06-08T18:17:38.463+05:30  INFO 10896 --- [main] c.i.app.HotelManagmentSystemApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-06-08T18:17:39.069+05:30  INFO 10896 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-08T18:17:39.150+05:30  INFO 10896 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 3 JPA repository interfaces.
+2023-06-08T18:17:39.685+05:30  INFO 10896 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8084 (http)
+2023-06-08T18:17:39.696+05:30  INFO 10896 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-08T18:17:39.697+05:30  INFO 10896 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-06-08T18:17:40.001+05:30  INFO 10896 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-06-08T18:17:40.009+05:30  INFO 10896 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/infy]   : Initializing Spring embedded WebApplicationContext
+2023-06-08T18:17:40.010+05:30  INFO 10896 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1495 ms
+2023-06-08T18:17:40.177+05:30  INFO 10896 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-08T18:17:40.228+05:30  INFO 10896 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.2.Final
+2023-06-08T18:17:40.230+05:30  INFO 10896 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-06-08T18:17:40.378+05:30  INFO 10896 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-06-08T18:17:40.498+05:30  INFO 10896 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-06-08T18:17:40.515+05:30  INFO 10896 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-08T18:17:40.873+05:30  INFO 10896 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@63e70bf9
+2023-06-08T18:17:40.876+05:30  INFO 10896 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-08T18:17:40.939+05:30  INFO 10896 --- [main] org.hibernate.orm.dialect                : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.0.29
+2023-06-08T18:17:41.127+05:30  INFO 10896 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-06-08T18:17:41.771+05:30  INFO 10896 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-08T18:17:41.856+05:30  INFO 10896 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-08T18:17:42.179+05:30  WARN 10896 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-08T18:17:42.641+05:30  INFO 10896 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8084 (http) with context path '/infy'
+2023-06-08T18:17:42.653+05:30  INFO 10896 --- [main] c.i.app.HotelManagmentSystemApplication  : Started HotelManagmentSystemApplication in 4.691 seconds (process running for 5.622)
+2023-06-08T18:17:42.656+05:30  INFO 10896 --- [main] c.i.app.HotelManagmentSystemApplication  : <<<<<<<<<<<<<<<<<<<appication Started>>>>>>>>>>>>>>>
+2023-06-08T18:33:41.689+05:30  INFO 10896 --- [RMI TCP Connection(25)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-06-08T18:33:41.705+05:30  INFO 10896 --- [RMI TCP Connection(25)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-06-08T18:33:41.714+05:30  INFO 10896 --- [RMI TCP Connection(25)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-08T18:33:41.717+05:30  INFO 10896 --- [RMI TCP Connection(25)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-08T18:33:41.730+05:30  INFO 10896 --- [RMI TCP Connection(25)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
