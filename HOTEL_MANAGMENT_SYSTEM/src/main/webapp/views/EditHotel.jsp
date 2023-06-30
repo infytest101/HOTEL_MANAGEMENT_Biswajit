@@ -251,6 +251,9 @@ $.ajax({
       if(result ==='updateData') {
 			showMassage("Room data Updated SucessFully",5000,"green");
       }
+      else{
+    	  showMassage("Error occured While Updating RoomData,Please Contact Admin",5000,"red");  
+      }
 	},
      error:function(xhr,status,error){
 		console.error(error);

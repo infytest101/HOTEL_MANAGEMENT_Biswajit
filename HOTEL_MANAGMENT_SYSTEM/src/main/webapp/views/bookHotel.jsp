@@ -206,10 +206,13 @@ $(document).ready(function(){ // collect Room Type Data From Dynamic DB(RoomsCon
           if(result ==='ADDROOM') {
   			showMassage("new room record added sucessFully",5000,"green");
         }
+          else{
+        	  showMassage("Error occured while adding room record,Please contact admin",5000,"red"); 
+          }
           //window.location.href = "/infy/SuccessAddPage";
 		},
          error:function(xhr,status,error){
-        	 showMassage("Error occured while updating room record,Please contact admin",5000,"red");
+        	 showMassage("Error occured while adding room record,Please contact admin",5000,"red");
 			console.error(error);
            }
 	});

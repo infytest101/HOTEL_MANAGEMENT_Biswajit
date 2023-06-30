@@ -148,6 +148,9 @@ function editdata(value){
 							//refreshTable();
 							 
 							}
+						else{
+							 showMassage("Error occured while deleting room record,Please contact admin",5000,"red");
+						}
 					},
 			         error:function(xhr,status,error){
 			        	 showMassage("Error occured while deleting room record,Please contact admin",5000,"red");
