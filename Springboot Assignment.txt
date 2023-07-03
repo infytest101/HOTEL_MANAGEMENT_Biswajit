@@ -1,0 +1,52 @@
+Hotel Management:
+Different actors:
+	- Admin User: Who can add/update/book rooms available across his hotel
+	- Customer: Enquiry about room availability
+	
+Admin User:
+	1). Listing of all the rooms using jQuery Datatable (~2 weeks) 
+		- Room Type
+		- Price
+		- Action Drop Down (Edit/Delete)
+		
+	2). Add/Update Room Form with basic validation (~2 weeks)
+		- Room Type (Dynamic Drop Down bring data from DB table)
+		- Price
+		- Room Amenities
+			- AC/Non-AC (Radio Button)
+			- Smoking/Non-Smoking Room (Radio Button)
+			- WI-FI/TV/Geyser (Check Box)
+	
+	3). Delete Room: (~.5 weeks)
+		Check if current date have any on-going or future booking or not, than only delete else give error message.
+		
+	4). Hotel Room Booking Listing Page: (~2 weeks)
+			- Search Filters: Booking Date (Mandatory), Room Type
+			- List down all the rooms available
+				- Room Type
+				- AC/Non-AC
+				- Smoking/Non-Smoking
+				- WI-FI/TV/Geyser (Show whatever got checked for that room)
+				- Action button - Book Room
+	
+
+DB Details:
+	- Schema Name: hotelmanagement
+	- Tables (~.5 weeks)
+		- RoomType
+			- roomTypeId (Primary Key)
+			- Room Type (Superior/Deluxe/Luxury/Suite)
+		- Rooms
+			- roomId (Primary Key)
+			- roomTypeId
+			- isACAvailable
+			- isSmokingAvailable
+			- amenties
+		- BookingDetails
+			- bookingDetailsId
+			- roomId
+			- bookingDates
+			- customerName
+			- customerEmail
+			- customerMobile
+			- desc
