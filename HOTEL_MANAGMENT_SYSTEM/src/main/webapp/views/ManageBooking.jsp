@@ -38,6 +38,9 @@ from Date::<input type="date" id="fromDateFilter" name="fromDate">
 to Date::<input type="date" id="toDateFilter" name="toDate"> -->
  Filter>>> RoomType:<select id="mycombo" name="roomtype"></select>
 <button id="searchid"class="btn btn-dark">Search</button>
+
+<button id="back" class="btn btn-dark">BACK</button>
+
 <!-- <button class="btn btn-secondary">Search</button> -->
 <table id="Hotel" class="table table-bordered table-striped"style="width: 100%">
 <thead>
@@ -85,7 +88,9 @@ function showMassage(message,duration,colordata) {
 		massageElement.remove();
 		},duration);
 	 } 
-	 
+$('#back').click(function(e){
+	window.location.href = "http://localhost:8084/infy/homepage";
+});
 function editdata(value){
 	
 	var editformData='';
@@ -293,6 +298,10 @@ $(document).ready(function () {
 				alert(" toDate Should be Greater then or equals to fromDate");
 				return false;
 			} */
+			if(rmdata=="empty"){
+				showMassage("please select a valid input",3000,"#33ffff");  
+				return false;
+			}
 			
 		var tdata=$('#Hotel').DataTable();
 		tdata.clear();
@@ -305,7 +314,7 @@ $(document).ready(function () {
 			success: function(result) {
 	          console.log("value addded:::::"+result);
 	          if(result==""){
-	        	  showMassage("filter-data not found in DB please provide different input",3000,"red");  
+	        	  showMassage("filter-data not found in database,please provide different input",3000,"red");  
 	          }
 	          dataList=result;
 	          console.log("value addded:::::"+dataList)
@@ -432,7 +441,7 @@ $(document).ready(function () {
 	function populateComboBox(data) {// this method used for showing Roomtype in dynamicDrop Down
 		 comboBox=$("#mycombo");
 		comboBox.empty();
-		comboBox.append($('<option>').text("Select RoomType...").val(''));
+		comboBox.append($('<option>').text("Select RoomType...").val('empty'));
 		$.each(data,function(index,value){
 			comboBox.append($('<option>').text(value).val(value));
 		});

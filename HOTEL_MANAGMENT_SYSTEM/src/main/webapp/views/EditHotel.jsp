@@ -126,7 +126,7 @@ padding: 5px; */
 
 
 <div class="form-container1">
-<button id="back" class="btn btn-dark">HOME</button>
+<button id="back" class="btn btn-dark">BACK</button>
 </div>
 
 
@@ -320,7 +320,7 @@ else if(radioValue=="" || typeof radioValue==="undefined"){
 });
 
 $('#back').click(function(e){
-	window.location.href = "http://localhost:8084/infy/ManageRoom";
+	window.location.href = "http://localhost:8084/infy/homepage";
 });
 /* $('#fromDate').on('change', function() {// this code disable the previous date of selected toDate and vice-versa.//21/06/2023
 	var fromDate = $('#fromDate').val().trim();

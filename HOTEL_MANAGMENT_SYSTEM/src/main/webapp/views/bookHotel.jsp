@@ -113,7 +113,7 @@ display:none;
 </form>
 
 <div class="form-container1">
-<button id="back" class="btn btn-dark">HOME</button>
+<button id="back" class="btn btn-dark">BACK</button>
 </div>
 
 </body>
@@ -288,7 +288,7 @@ $(document).ready(function(){ // collect Room Type Data From Dynamic DB(RoomsCon
 		}); */
 });
 $('#back').click(function(e){
-	window.location.href = "http://localhost:8084/infy/ManageRoom";
+	window.location.href = "http://localhost:8084/infy/homepage";
 });
 function showMassage(message,duration,colordata) {  
 	var massageElement=document.createElement("div");
