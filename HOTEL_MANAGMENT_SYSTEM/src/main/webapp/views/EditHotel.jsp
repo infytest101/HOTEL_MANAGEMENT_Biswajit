@@ -40,14 +40,14 @@ body{
  }
  #adddata{
 position:absolute;
-bottom:1px;
+bottom:-20px;
 left:25%;
 transform: translateX(-50%);
  }
  
   #back{
 position:absolute;
-bottom:1px;
+bottom:-20px;
 left:45%;
 transform: translateX(-50%);
  }

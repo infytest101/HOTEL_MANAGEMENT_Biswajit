@@ -36,13 +36,13 @@ body{
  }
    #back{
 position:absolute;
-bottom:20px;
+bottom:-20px;
 left:45%;
 transform: translateX(-50%);
  }
  #adddata{
 position:absolute;
-bottom:20px;
+bottom:-20px;
 left:25%;
 transform: translateX(-50%);
  }

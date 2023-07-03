@@ -41,7 +41,7 @@ public String homeCall(Model model) {
 }
 //@GetMapping("/UpdatePage")
 @GetMapping("/ManageRoom")
-public String editDeleteRenderUrl() {
+public String ManageRoomUrl() {
 	logger.info("HomePageController:: editDeleteRenderUrl() :: EditDeleteRoom :: Rendering page");
 	return "ManageRoom";
 }
@@ -53,21 +53,11 @@ public String editUpdateRenderUrl() {
 }
 
 @GetMapping("/ManageBooking")
-public String addpageeRenderUrl() {
+public String ManageBookingUrl() {
 	logger.info("HomePageController:: addpageeRenderUrl() :: SuccessAddPage :: Rendering page");
 	return "ManageBooking";
 }
-//@GetMapping(value = "/deleteroomdetails/{roomid}")
-@GetMapping(value = "/deleteroomdetails")
-@ResponseBody
-public String deleteRoomData(@RequestParam("roomid")String roomId,@RequestParam("roomType")String roomType) {
-	Integer roomid=Integer.parseInt(roomId);
-	String data=repo.deleteRoomDetails(roomid,roomType);
-	logger.info("DeleteRoomDetails DeleteRoomDetails:::::::::roomType::::::"+roomId+"roomType:::"+roomType);
-	//return "DeletePage";
-	return data;
-	
-}
+
 
 @PostMapping("/editroomdetails")
 @ResponseBody
@@ -77,6 +67,17 @@ public String editRenderUrl(@RequestParam("editEncodingvalue") String formData, 
 	logger.info("HomePageController:: editroomdetails() :: EditRoom :: Rendering page");
 	//return new ModelAndView("EditHotel");
 	return "EditHotel";
+}
+@GetMapping("/addCostumer")
+public ModelAndView bookRoomUrl(Model model) {
+	/*
+	 * List<String> roomtypedata; try { roomtypedata = rc.fetchRoomType();
+	 * logger.info("roomtypedata roomtypedata here:::::::::::::::::" +
+	 * roomtypedata); model.addAttribute("roomTypDatas", roomtypedata); } catch
+	 * (RoomTypeCostumException e) { e.printStackTrace(); }
+	 */
+	return new ModelAndView("bookHotel");
+	//return "bookHotel";
 }
 @GetMapping("/editroomdetails1")
 @ResponseBody

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -36,17 +37,7 @@ public class RoomController {
 	 * response.sendRedirect("views/bookHotel.jsp"); }
 	 */
 
-	@GetMapping("/addCostumer")
-	public ModelAndView bookCostumer(Model model) {
-		/*
-		 * List<String> roomtypedata; try { roomtypedata = rc.fetchRoomType();
-		 * logger.info("roomtypedata roomtypedata here:::::::::::::::::" +
-		 * roomtypedata); model.addAttribute("roomTypDatas", roomtypedata); } catch
-		 * (RoomTypeCostumException e) { e.printStackTrace(); }
-		 */
-		return new ModelAndView("bookHotel");
-		//return "bookHotel";
-	}
+
 
 	@PostMapping("/addRoomData")
 	public ResponseEntity<String> addRoomData(@RequestBody RequestBodydata requestdata) {
@@ -85,7 +76,16 @@ public class RoomController {
 		logger.info("fetchAllRoooms ::::::::::::::::::::::::::::::::::"+rpto);
 		return ResponseEntity.ok(rpto);	
 	}
-	
+	//@GetMapping(value = "/deleteroomdetails/{roomid}")
+	@GetMapping(value = "/deleteroomdetails")
+	@ResponseBody
+	public String deleteRoomData(@RequestParam("roomid")String roomId,@RequestParam("roomType")String roomType) {
+		Integer roomid=Integer.parseInt(roomId);
+		String data=roomService.deleteRoomDetails(roomid,roomType);
+		logger.info("DeleteRoomDetails DeleteRoomDetails:::::::::roomType::::::"+roomId+"roomType:::"+roomType);
+		//return "DeletePage";
+		return data;	
+	}
 	@GetMapping("/*")
 	public String ErrorPage() {
 		return "404 Error url not found,check url";
