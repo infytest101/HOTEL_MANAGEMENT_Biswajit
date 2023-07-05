@@ -354,11 +354,11 @@ $(document).ready(function () {
        var roomType = dataList[i]; 
       // console.log("totalRoomAvaliable:::::::::::::::::"+roomType.totalRoomAvaliable);
       // console.log("totalRoomBooked:::::::::::::::::"+roomType.totalRoomBooked);
-       var am=JSON.parse(roomType.amenties);
+      /*  var am=JSON.parse(roomType.amenties);
        console.log("amenties data from DB::"+am);
        var wifi=am.amenties;
-       console.log("wifiiii"+wifi);
-       
+       console.log("wifiiii"+wifi); */
+       var wifi='';
       var newrow= tabledata.row.add([
     	   roomType.id,
     	   roomType.roomtypedata,

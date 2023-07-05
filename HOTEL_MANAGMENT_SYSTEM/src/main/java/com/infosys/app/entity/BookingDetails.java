@@ -1,91 +1,104 @@
 package com.infosys.app.entity;
 import java.util.Date;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+
 @Entity
-@Table(name="bookingDetails")
+//@Table(name="BookingDetails")
+
 public class BookingDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="bookingDetailsId")
-	private int bookingDetailsId;
-	@Column(name="customerName")
-	private String customerName;
-	@Column(name="customerEmail")
-	private String customerEmail;
-	@Column(name="customerMobile")
-	private String customerMobile;
-	private Date fromBookingDate;
-	private Date toBookingDate;
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="room_id")
+	private Long bookingDetailsId;
+/*	@Column(name="roomId",nullable = false)
+	private int roomId;*/
+	@Column(name="customerId")
+	private int customerId;
+	@Column(name="createDate",nullable = false)
+	private Date createDate;
+	@Column(name="updateDate")
+	private Date updateDate;
+	@Column(name="createBy",length = 225,nullable = false)
+	private String createBy;
+	@Column(name="updatedBy",length = 225)
+	private String updatedBy;
+	@Column(name="totalRoomsBooked",nullable = false)
+	private int totalRoomsBooked;
+	@Column(name="bookingStartDate")
+	private Date bookingStartDate;
+	@Column(name="bookingEndDate")
+	private Date bookingEndDate;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="roomId")
 	private Rooms rooms;
 	
-	public Date getFromBookingDate() {
-		return fromBookingDate;
-	}
-	public void setFromBookingDate(Date fromDate) {
-		this.fromBookingDate = fromDate;
-	}
-	public Date getToBookingDate() {
-		return toBookingDate;
-	}
-	public void setToBookingDate(Date toBookingDate) {
-		this.toBookingDate = toBookingDate;
-	}
-	
-	public Rooms getRooms() {
-		return rooms;
-	}
-	public int getBookingDetailsId() {
+	public Long getBookingDetailsId() {
 		return bookingDetailsId;
 	}
-	public void setBookingDetailsId(int bookingDetailsId) {
+	public void setBookingDetailsId(Long bookingDetailsId) {
 		this.bookingDetailsId = bookingDetailsId;
+	}
+	public int getCustomerId() {
+		return customerId;
+	}
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
+	public Date getCreateDate() {
+		return createDate;
+	}
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
+	public Date getUpdateDate() {
+		return updateDate;
+	}
+	public void setUpdateDate(Date updateDate) {
+		this.updateDate = updateDate;
+	}
+	public String getCreateBy() {
+		return createBy;
+	}
+	public void setCreateBy(String createBy) {
+		this.createBy = createBy;
+	}
+	public String getUpdatedBy() {
+		return updatedBy;
+	}
+	public void setUpdatedBy(String updatedBy) {
+		this.updatedBy = updatedBy;
+	}
+	public int getTotalRoomsBooked() {
+		return totalRoomsBooked;
+	}
+	public void setTotalRoomsBooked(int totalRoomsBooked) {
+		this.totalRoomsBooked = totalRoomsBooked;
+	}
+	public Date getBookingStartDate() {
+		return bookingStartDate;
+	}
+	public void setBookingStartDate(Date bookingStartDate) {
+		this.bookingStartDate = bookingStartDate;
+	}
+	public Date getBookingEndDate() {
+		return bookingEndDate;
+	}
+	public void setBookingEndDate(Date bookingEndDate) {
+		this.bookingEndDate = bookingEndDate;
+	}
+	public Rooms getRooms() {
+		return rooms;
 	}
 	public void setRooms(Rooms rooms) {
 		this.rooms = rooms;
 	}
-	@Override
-	public String toString() {
-		return "BookingDetails [bookingDetailsId=" + bookingDetailsId + ", customerName=" + customerName
-				+ ", customerEmail=" + customerEmail + ", customerMobile=" + customerMobile + ", fromBookingDate="
-				+ fromBookingDate + ", toBookingDate=" + toBookingDate + ", rooms=" + rooms + ", description="
-				+ description + "]";
-	}
-	public String getCustomerName() {
-		return customerName;
-	}
-	public void setCustomerName(String customerName) {
-		this.customerName = customerName;
-	}
-	public String getCustomerEmail() {
-		return customerEmail;
-	}
-	public void setCustomerEmail(String customerEmail) {
-		this.customerEmail = customerEmail;
-	}
-	public String getCustomerMobile() {
-		return customerMobile;
-	}
-	public void setCustomerMobile(String customerMobile) {
-		this.customerMobile = customerMobile;
-	}
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	@Column(name="description")
-	private String description;
-	
+
 }

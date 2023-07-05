@@ -46,6 +46,9 @@ li a:hover {
   background-color: green;
   color: white;
 }
+/*  .rm,#roomid,.tra,.trb,#totalRoomAvaliable,#totalRoomBooked{
+	 display:none
+	 } */
 </style>
 </head>
 <body>
@@ -70,6 +73,7 @@ li a:hover {
 	<tr>
 		<th id="roomid">Room ID</th>
 		<th id="roomtypedata">Room Type</th>
+		<th id="roomName">Room Name</th>
 		<th id="price">Price</th>
 		<th id="totalRoomAvaliable">Room availability</th>
 		<th id="totalRoomBooked">Room Booked</th>
@@ -272,22 +276,39 @@ $(document).ready(function () {
           console.log("value addded:::::"+dataList)
        for (var i=0;i<dataList.length; i++) { 
        var roomType = dataList[i]; 
-      // console.log("totalRoomAvaliable:::::::::::::::::"+roomType.totalRoomAvaliable);
-      // console.log("totalRoomBooked:::::::::::::::::"+roomType.totalRoomBooked);
-       var am=JSON.parse(roomType.amenties);
-       console.log("amenties data from DB::"+am);
-       var wifi=am.amenties;
-       console.log("wifiiii"+wifi);
-       
+    	  var wifidata='';
+    	  var ACAvailable='not avaliable';
+    	  var SmokingAvailable='not avaliable';
+	 if(roomType.wifiAvailable==true){
+		 wifidata+="WIFI,";
+	 }
+	 if(roomType.tvavailable==true){
+		 wifidata+="TV,";
+	 }
+	 if(roomType.geyserAvailable==true){
+		 wifidata+="Geyser,";
+	 }
+	 if(roomType.isACAvailable){
+		 ACAvailable="avaliable";
+	 }
+	 if(roomType.isSmokingAvailable){
+		 SmokingAvailable="avaliable";
+	 }
+	var checkwifi = wifidata.includes(",", wifidata.length-1);
+	var dataresult='';
+	if(checkwifi){
+	 dataresult = wifidata.substring(0, wifidata.length-1);
+	}
       var newrow= tabledata.row.add([
     	   roomType.id,
     	   roomType.roomtypedata,
+    	   roomType.roomName,
     	   roomType.price,
     	   roomType.totalRoomAvaliable,
     	   roomType.totalRoomBooked,
-    	   roomType.isACAvailable,
-    	   roomType.isSmokingAvailable,
-    	   wifi,
+    	   ACAvailable,
+    	   SmokingAvailable,
+    	   dataresult,
     	   '<td><select class="deleteclasss" onchange="editdata(this.value)"><option value="">Select::</option><option value="edit" Style=background:lightblue>Edit</option><option value="delete" Style=background:red>Delete</option></select></td>'
     	   ]).draw(false).node();
       $(newrow).find('td:eq(0)').attr('data-field-name','roomid').addClass('rm');

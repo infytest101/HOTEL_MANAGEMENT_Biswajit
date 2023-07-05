@@ -16,9 +16,9 @@ import com.infosys.app.entity.Rooms;
 @EnableJpaRepositories
 public interface RoomRepository extends JpaRepository<Rooms, Integer> {
 
-	@Query("SELECT r FROM Rooms r INNER JOIN BookingDetails b ON  r.bookDetails.bookingDetailsId=b.bookingDetailsId where fromBookingDate BETWEEN :fromBookingDate AND :toBookingDate")
+	//@Query("SELECT r FROM Rooms r INNER JOIN BookingDetails b ON  r.bookDetails.bookingDetailsId=b.bookingDetailsId where fromBookingDate BETWEEN :fromBookingDate AND :toBookingDate")
 	//@Query("SELECT r FROM Rooms r")
-	List<Rooms> findByFromDateFilter(Date fromBookingDate,Date toBookingDate);
+	//List<Rooms> findByFromDateFilter(Date fromBookingDate,Date toBookingDate);
 	//@Query("SELECT r FROM Rooms where r.roomType.roomTypeId=:roomTypeID")
 	//List<Rooms> findByRoomTypeFilterId(int roomTypeID);
 

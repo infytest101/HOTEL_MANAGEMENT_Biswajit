@@ -8,12 +8,47 @@ public class RoomPriceTypeDto {
 	private String id;
 	private  RoomType roomtype;
 	private  String  roomtypedata;
-	private String isACAvailable;
-	private String isSmokingAvailable;
+	private boolean isACAvailable;
+	private boolean isSmokingAvailable;
 	private String fromDate;
 	private String toDate;
 	private int totalRoomAvaliable;
 	private int totalRoomBooked;
+	private String roomName;
+	private boolean isWifiAvailable;
+	private boolean isTVAvailable;
+	private boolean isGeyserAvailable;
+	public boolean isWifiAvailable() {
+		return isWifiAvailable;
+	}
+	public void setWifiAvailable(boolean isWifiAvailable) {
+		this.isWifiAvailable = isWifiAvailable;
+	}
+	public boolean isTVAvailable() {
+		return isTVAvailable;
+	}
+	public void setTVAvailable(boolean isTVAvailable) {
+		this.isTVAvailable = isTVAvailable;
+	}
+	public boolean isGeyserAvailable() {
+		return isGeyserAvailable;
+	}
+	public void setGeyserAvailable(boolean isGeyserAvailable) {
+		this.isGeyserAvailable = isGeyserAvailable;
+	}
+	public void setACAvailable(boolean isACAvailable) {
+		this.isACAvailable = isACAvailable;
+	}
+	public void setSmokingAvailable(boolean isSmokingAvailable) {
+		this.isSmokingAvailable = isSmokingAvailable;
+	}
+
+	public String getRoomName() {
+		return roomName;
+	}
+	public void setRoomName(String roomName) {
+		this.roomName = roomName;
+	}
 	public int getTotalRoomAvaliable() {
 		return totalRoomAvaliable;
 	}
@@ -39,25 +74,18 @@ public class RoomPriceTypeDto {
 	public void setToDate(String toDate) {
 		this.toDate = toDate;
 	}
-	public String getIsACAvailable() {
+	public boolean getIsACAvailable() {
 		return isACAvailable;
 	}
-	public void setIsACAvailable(String isACAvailable) {
+	public void setIsACAvailable(boolean isACAvailable) {
 		this.isACAvailable = isACAvailable;
 	}
-	public String getIsSmokingAvailable() {
+	public boolean getIsSmokingAvailable() {
 		return isSmokingAvailable;
 	}
-	public void setIsSmokingAvailable(String isSmokingAvailable) {
+	public void setIsSmokingAvailable(boolean isSmokingAvailable) {
 		this.isSmokingAvailable = isSmokingAvailable;
 	}
-	public String getAmenties() {
-		return amenties;
-	}
-	public void setAmenties(String amenties) {
-		this.amenties = amenties;
-	}
-	private String amenties;
 	public String getRoomtypedata() {
 		return roomtypedata;
 	}
@@ -69,7 +97,9 @@ public class RoomPriceTypeDto {
 		return "RoomPriceTypeDto [price=" + price + ", id=" + id + ", roomtype=" + roomtype + ", roomtypedata="
 				+ roomtypedata + ", isACAvailable=" + isACAvailable + ", isSmokingAvailable=" + isSmokingAvailable
 				+ ", fromDate=" + fromDate + ", toDate=" + toDate + ", totalRoomAvaliable=" + totalRoomAvaliable
-				+ ", totalRoomBooked=" + totalRoomBooked + ", amenties=" + amenties + "]";
+				+ ", totalRoomBooked=" + totalRoomBooked + ", roomName=" + roomName + ", isWifiAvailable="
+				+ isWifiAvailable + ", isTVAvailable=" + isTVAvailable + ", isGeyserAvailable=" + isGeyserAvailable
+				+ "]";
 	}
 	public String getPrice() {
 		return price;

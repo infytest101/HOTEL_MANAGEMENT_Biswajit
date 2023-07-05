@@ -222,6 +222,7 @@ $(document).ready(function(){ // collect Room Type Data From Dynamic DB(RoomsCon
 	var AmenitiesjsonData={};
 	$('#adddata').click(function(e){
 		var amentis= {};
+		var am1111={};
 		var amentisAllData= {};
 		var CheckValue=[];
 		var radioValue=$('input[name="SmokingAvailable"]:checked').val();
@@ -269,9 +270,13 @@ $(document).ready(function(){ // collect Room Type Data From Dynamic DB(RoomsCon
 				//amentis.checkboxes=	CheckValue;
 				amentis.amenties=	CheckValue;
 				//amentisAllData.amenties=CheckValue;
-				AmenitiesjsonData=JSON.stringify(amentis);
+				 AmenitiesjsonData=JSON.stringify(amentis);
 				allData=JSON.stringify(amentisAllData);
-				
+				var jsonobj=CheckValue.reduce(function(obj,item){
+					obj[item]=item;
+					return obj;
+				},{});
+				AmenitiesjsonData=JSON.stringify(jsonobj);
 				console.log(" Amenities jSONData::::::::::"+AmenitiesjsonData);
 	});
 	

@@ -2,22 +2,23 @@ package com.infosys.app.serviceImpl;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import org.json.JSONObject;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.infosys.app.Repository.BookingRepository;
 import com.infosys.app.Repository.RoomRepository;
 import com.infosys.app.Repository.RoomTypeRepository;
 import com.infosys.app.dto.RoomDataSaveDTO;
 import com.infosys.app.dto.RoomPriceTypeDto;
+import com.infosys.app.entity.Amenities;
 import com.infosys.app.entity.BookingDetails;
 import com.infosys.app.entity.RoomType;
 import com.infosys.app.entity.Rooms;
@@ -37,37 +38,38 @@ public class RoomsServiceImpl implements RoomsService {
 	RoomTypeRepository roomtyperepo;
 	@Autowired
 	EntityManager entitymanager;
-
-	
+	@Autowired
+	BookingRepository bookrepo;
+	boolean wifi = false;
+	boolean ac = false;
+	boolean smok = false;
+	boolean TV = false;
+	boolean gyser = false;
 	@Override
 	public List<RoomPriceTypeDto> fetchAllRoomData() {
 		try {
 
 			List<Rooms> roomData = repo.findAll();
 			System.out.println(",,,,,,,,,,,,,,,,,,,," + roomData);
-			// boolean isActive = roomData.stream().allMatch(data -> data == null);
-			// if (isActive)
-			// throw new NullPointerException("null value is found in fetchAllRoomData
-			// mehod() kindly check once");
 			List<RoomPriceTypeDto> dataValue = roomData.stream().map(data -> {
 				RoomPriceTypeDto rpto = new RoomPriceTypeDto();
-				// Date d1 = data.getBookDetails().getFromBookingDate();
-				// Date d2 = data.getBookDetails().getToBookingDate();
-				// DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-				// String formDate = dateFormat.format(d1);
-				// String toDate = dateFormat.format(d2);
 				String roomid = data.getRoomId().toString();
-				String price = data.getPrice().toString();
+				int price1=data.getPrice();
+				String price=String.valueOf(price1); 
 				rpto.setId(roomid);
 				rpto.setPrice(price);
-				rpto.setAmenties(data.getAmenties());
-				rpto.setIsACAvailable(data.getIsACAvailable());
-				rpto.setIsSmokingAvailable(data.getIsSmokingAvailable());
+				//BookingDetails bk=data.getBookingDetails();
+				//logger.info("bkbkbkbkbkbkbkbkbkbkbkbkbkbkbkbk"+bk.getBookingDetailsId());
+				rpto.setIsACAvailable(data.getAmenities().isACAvailable());
+				rpto.setIsSmokingAvailable(data.getAmenities().isSmokingAvailable());
 				rpto.setRoomtypedata(data.getRoomType().getRoomType());
-				// rpto.setTotalRoomAvaliable(data.getRoomType().getTotalRoomAvaliable());
-				// rpto.setTotalRoomBooked(data.getRoomType().getTotalRoomBooked());
-				rpto.setTotalRoomAvaliable(data.getTotalRoomAvaliable());
-				rpto.setTotalRoomBooked(data.getTotalRoomBooked());
+				 rpto.setTotalRoomAvaliable(data.getTotalRoomsAvailable());
+				rpto.setTotalRoomBooked(data.getBookingDetails().getTotalRoomsBooked());
+				rpto.setRoomName(data.getRoomName());
+				rpto.setGeyserAvailable(data.getAmenities().isGeyserAvailable());
+				rpto.setWifiAvailable(data.getAmenities().isWifiAvailable());
+				rpto.setTVAvailable(data.getAmenities().isTVAvailable());
+				//rpto.setTotalRoomBooked(data.getBookingDetails().getTotalRoomsBooked());
 				// rpto.setFromDate(formDate);
 				// rpto.setToDate(toDate);
 				return rpto;
@@ -103,18 +105,60 @@ public class RoomsServiceImpl implements RoomsService {
 			// bookDetails.setFromBookingDate(fromDate);
 			// bookDetails.setToBookingDate(toDate);
 
-			room.setAmenties(amenitiesjsonData);
-			room.setIsACAvailable(rm.getIsACAvailable());
-			room.setPrice(rm.getPrice());
-			room.setIsSmokingAvailable(rm.getIsSmokingAvailable());
-			room.setTotalRoomAvaliable(rm.getTotalRoomAvaliable());
-			room.setTotalRoomBooked(rm.getTotalRoomBooked());
+			Amenities amenities = new Amenities();
+			logger.info("amenitiesjsonData::::" + amenitiesjsonData);
+
+			JSONObject josnobj = new JSONObject(amenitiesjsonData);
+			String ac1 = rm.getIsACAvailable();
+			String smok1 = rm.getIsSmokingAvailable();
+
+			if (josnobj.has("WIFI")) {
+				wifi = true;
+			}
+			if (josnobj.has("TV")) {
+				TV = true;
+			}
+			if (josnobj.has("Geyser")) {
+				gyser = true;
+			}
+
+			if (ac1.equalsIgnoreCase("AC")) {
+				ac = true;
+			}
+			if (smok1.equalsIgnoreCase("Smoking")) {
+				smok = true;
+			}
+
+			logger.info("wifi: " + wifi + "TV: " + TV + "GYSER: " + gyser + "smok:" + smok + "ac: " + ac);
+			amenities.setACAvailable(ac);
+			amenities.setSmokingAvailable(wifi);
+			amenities.setGeyserAvailable(gyser);
+			amenities.setWifiAvailable(wifi);
+			amenities.setTVAvailable(TV);
+
+			BookingDetails bookingDetails = new BookingDetails();
+			bookingDetails.setTotalRoomsBooked(rm.getTotalRoomBooked());
+			bookingDetails.setCreateBy("biswajit Nayak");
+			bookingDetails.setCreateDate(new Date());
+			bookingDetails.setRooms(room);
+
+			room.setRoomName("SuperiorAC");
+			room.setBookingDetails(bookingDetails);
+			room.setAmenities(amenities);
 			room.setRoomType(roomType);
-			//return "ADDROOM1";
+			room.setTotalRoomsAvailable(rm.getTotalRoomAvaliable());
+			room.setCreateBy("Biswajit Nayak");
+			room.setPrice(rm.getPrice());
+			room.setCreateDate(new Date());
+			room.setUpdatedBy("");
+			room.setUpdateDate(null);
+
+			// return "ADDROOM1";
 			// room.setBookDetails(bookDetails);
 			repo.save(room);
 		} catch (Exception ex) {
 			ex.printStackTrace();
+			return "Error";
 		}
 		return "ADDROOM";
 	}
@@ -135,8 +179,8 @@ public class RoomsServiceImpl implements RoomsService {
 			return "deletedata";
 		} catch (Exception ex) {
 			ex.printStackTrace();
+			return "Error";
 		}
-		return null;
 
 	}
 
@@ -200,6 +244,7 @@ public class RoomsServiceImpl implements RoomsService {
 			return dataValue;
 		} catch (Exception ex) {
 			ex.printStackTrace();
+			return null;
 		}
 		return null;
 	}
@@ -235,6 +280,7 @@ public class RoomsServiceImpl implements RoomsService {
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
+			return null;
 		}
 		return null;
 
