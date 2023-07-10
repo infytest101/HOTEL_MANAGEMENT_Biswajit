@@ -21,12 +21,16 @@ import com.infosys.app.beans.RequestBodydata;
 import com.infosys.app.dto.RoomPriceTypeDto;
 import com.infosys.app.exception.RoomTypeCostumException;
 import com.infosys.app.service.RoomsService;
+import com.infosys.app.serviceImpl.EmailServiceImpl;
 
 @RestController
 public class RoomController {
 	@Autowired
 	RoomsService roomService;
 	RoomsTypeController rc; 
+	@Autowired
+
+	EmailServiceImpl emailsend;
 	Logger logger = LoggerFactory.getLogger(RoomController.class);
 	/*
 	 * @GetMapping("/addCostumer") public void bookCostumer(HttpServletResponse
@@ -90,5 +94,8 @@ public class RoomController {
 	public String ErrorPage() {
 		return "404 Error url not found,check url";
 	}
-
+	/*
+	 * @GetMapping("/email") public void sendEmail() throws Exception {
+	 * logger.info("inside mail service:::::::::"); emailsend.sendEmail(); }
+	 */
 }

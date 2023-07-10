@@ -18,6 +18,9 @@ href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
 href="https://cdn.datatables.net/1.10.16/css/dataTables.jqueryui.min.css" />
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
 <style>
+	 .rm,#roomid,.tra,.trb,#totalRoomAvaliable,#totalRoomBooked{
+	 display:none
+	 }
 ul {
   list-style-type: none;
   margin: 0;
@@ -115,6 +118,18 @@ function editdata(value){
 	var editformData='';
 	 var editEncodingvalue='';
 	 var rowdata1={};
+	//var rmval= confirm("Are YOU SURE ,EDIT THE ROOM DATA");
+	/*  $('#Hotel .deleteclasss').each(function(){
+		 $(this).change(function(){
+			 var data=$(this).val();
+			 console.log("data11111111 ::::::::::::::::"+data);
+				alert("data clicked111111::::"+data);
+		 });
+	 }); */
+/* 	 console.log("data233333 ::::::::::::::::"+value);
+		 var data=$('.deleteclasss').val();
+		 console.log("data233333 ::::::::::::::::"+data);*/
+			//alert("data clicked222222::::"+value); 
 		if(value=="delete"){
 			 $('#Hotel').on('change','.deleteclasss',function(){
 			 var rowdata=$(this).closest('tr').find('td').map(function(){
@@ -130,6 +145,29 @@ function editdata(value){
 			  console.log("rmtydt rmtydt rmtydt"+rmtydt);
 			  var Encodingvalue1=rowdata.join('&');
 			  var Encodingvalue=encodeURIComponent(rowdata.join('&'));
+			  
+			  /* var frmdt=$(this).closest('tr').find('.fmdate').text();//21/06/2023
+			  var tomdt=$(this).closest('tr').find('.tmdate').text();
+			   var part=frmdt.split("-");
+			  var day=parseInt(part[0],10);
+			  var month=parseInt(part[1],10)-1;
+			  var year=parseInt(part[2],10);
+			  var fmd=new Date(year,month,day);
+			  var part1=tomdt.split("-");
+			  var day1=parseInt(part1[0],10);
+			  var month1=parseInt(part1[1],10)-1;
+			  var year1=parseInt(part1[2],10);
+			  var tmd=new Date(year1,month1,day1);
+			   var today = new Date();
+			   today.setHours(0,0,0,0);
+			  if(today<=fmd){
+				  alert("you can't Delete ongoing/future booking");
+				  return false;
+			  }
+			  else if(today<=tmd){
+				  alert("you can't Delete ongoing/future booking");
+				  return false;
+			  }  */
 			  console.log("Encodingvalue"+Encodingvalue1);
 			  var rmval= confirm("Are you sure to delete this item?");
 			  if(rmval==true) {
@@ -248,7 +286,83 @@ $(document).ready(function () {
 	
 		});
 	
-	var dataList=[];	
+	var dataList=[];
+	
+/* 	$('#searchid').click(function(){
+
+		//var tdata=$('#Hotel').DataTable();
+		//tdata.clear();
+		var fromdatedata=$('#fromDateFilter').val();
+		var todatedata=$('#toDateFilter').val();
+		var rmdata=$('#mycombo').val();
+		console.log("roomType:::"+rmdata);
+		var  date1 = new Date(fromdatedata);
+		var date2 = new Date(todatedata);
+			if((fromdatedata=="") || (todatedata=="")){
+			alert("kindly provide Date input for Filtering Data");
+			return false;
+		}
+			else if( todatedata==""){
+				alert("kindly provide Date input for Filtering Data");
+				return false;
+			}
+			else if(date1>date2){
+				alert(" toDate Should be Greater then or equals to fromDate");
+				return false;
+			}
+			
+		var tdata=$('#Hotel').DataTable();
+		tdata.clear();
+		console.log("fromdatedata"+fromdatedata);
+		console.log("todatedata"+fromdatedata);
+		$.ajax({
+			type :'GET',
+			url:'/infy/fetchAllFilterRoooms?fromdatedata='+fromdatedata+"&todatedata="+todatedata+"&roomtype="+rmdata,
+			success: function(result) {
+	          console.log("value addded:::::"+result);
+	          if(result==""){
+	        	  showMassage("filter-data not found in DB please provide different input",3000);  
+	          }
+	          dataList=result;
+	          console.log("value addded:::::"+dataList)
+	          
+	       for (var i=0;i<dataList.length; i++) { 
+	       var roomType = dataList[i]; 
+	       var am=JSON.parse(roomType.amenties);
+	       var wifi=am.checkboxes;
+	       console.log("wifiiii"+wifi);
+	       
+	      var newrow= tabledata.row.add([
+	    	   roomType.id,
+	    	   roomType.roomtypedata,
+	    	   roomType.price,
+	    	   roomType.fromDate,
+	    	   roomType.toDate,
+	    	   roomType.isACAvailable,
+	    	   roomType.isSmokingAvailable,
+	    	   wifi,
+	    	   '<td><select class="deleteclasss" onchange="editdata(this.value)"><option value="">Select::</option><option value="edit" Style=background:lightblue>Edit</option><option value="delete" Style=background:red>Delete</option></select></td>'
+	    	   ]).draw(false).node();
+	      $(newrow).find('td:eq(0)').attr('data-field-name','roomid').addClass('rm');
+	      $(newrow).find('td:eq(1)').attr('data-field-name','roomtypedata');
+	      $(newrow).find('td:eq(2)').attr('data-field-name','price');
+	      $(newrow).find('td:eq(3)').attr('data-field-name','formDate').addClass('fmdate');
+	      $(newrow).find('td:eq(4)').attr('data-field-name','toDate').addClass('tmdate');
+	      $(newrow).find('td:eq(5)').attr('data-field-name','acnonac');
+	      $(newrow).find('td:eq(6)').attr('data-field-name','smoknonsmok');
+	      $(newrow).find('td:eq(7)').attr('data-field-name','wifitv');
+	      $(newrow).find('td:eq(8)').attr('data-field-name','action');
+	       
+	       }
+			},
+	         error:function(xhr,status,error){
+				console.error(error);
+	           }
+			
+		});
+	}); */
+	
+	
 /* 	$('#fromDateFilter').on('change', function() {
 		var fromDate = $('#fromDateFilter').val().trim();
 		$('#toDateFilter').attr('min',fromDate);

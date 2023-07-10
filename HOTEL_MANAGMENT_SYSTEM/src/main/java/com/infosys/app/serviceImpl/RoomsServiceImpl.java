@@ -37,7 +37,8 @@ public class RoomsServiceImpl implements RoomsService {
 	RoomTypeRepository roomtyperepo;
 	@Autowired
 	EntityManager entitymanager;
-
+	@Autowired
+	EmailServiceImpl empimpl;
 	
 	@Override
 	public List<RoomPriceTypeDto> fetchAllRoomData() {
@@ -113,6 +114,7 @@ public class RoomsServiceImpl implements RoomsService {
 			//return "ADDROOM1";
 			// room.setBookDetails(bookDetails);
 			repo.save(room);
+			empimpl.sendEmail(amenitiesjsonData);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
